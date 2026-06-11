@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore as ideias de projetos no mural e encontre colaboradores no DevMatch.">
+    <title>Mural de Projetos - DevMatch</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fa-solid fa-code-branch"></i> Dev<span>Match</span>
+            </a>
+            <nav id="main-navigation">
+                <a href="/" class="nav-link" id="nav-home">Início</a>
+                <a href="/mural" class="nav-link active" id="nav-mural">Mural de Projetos</a>
+                <a href="/cadastro" class="nav-link" id="nav-profile">Meu Perfil</a>
+                <a href="/novo-projeto" class="btn btn-primary" id="nav-new-project">Criar Projeto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Mural Title Section -->
+        <section class="mural-header" aria-labelledby="mural-title">
+            <div class="mural-header-container">
+                <div>
+                    <h1 id="mural-title">Mural de Projetos</h1>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">Encontre ideias interessantes ou publique a sua para atrair parceiros de código.</p>
+                </div>
+                <a href="/novo-projeto" class="btn btn-primary" id="btn-mural-new-project">
+                    <i class="fa-solid fa-plus"></i> Publicar Projeto
+                </a>
+            </div>
+        </section>
+
+        <!-- Search & Filter Controls -->
+        <section class="search-filter-section" aria-label="Filtros e Busca">
+            <div class="search-filter-box">
+                <div class="input-group">
+                    <label for="search-input">Buscar Projetos</label>
+                    <input type="text" id="search-input" placeholder="Digite palavras-chave (ex: Finanças, API...)">
+                </div>
+                <div class="input-group">
+                    <label for="tech-filter">Tecnologia / Stack</label>
+                    <select id="tech-filter">
+                        <option value="">Todas as Tecnologias</option>
+                        <!-- Populated dynamically by JS -->
+                    </select>
+                </div>
+                <div class="input-group" style="justify-content: flex-end;">
+                    <button class="btn btn-secondary" id="btn-reset-filters" style="width: 100%;">
+                        <i class="fa-solid fa-rotate-left"></i> Limpar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="projects-section" aria-label="Lista de Projetos">
+            <div class="projects-grid" id="projects-container">
+                <!-- Dynamically populated by JS -->
+                <div class="no-projects">
+                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);"></i>
+                    <p>Carregando projetos...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="notification" role="alert" aria-live="assertive">
+        <i class="fa-solid fa-circle-check" id="toast-icon"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 DevMatch. Desenvolvido pelos estudantes do Eniac:</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">
+                Gustavo de Souza Costa &bull; Alysson Oliveira Brito &bull; Pedro Henrique Nemet dos Santos
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

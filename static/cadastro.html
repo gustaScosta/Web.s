@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crie seu perfil no DevMatch para publicar projetos e colaborar com outros desenvolvedores.">
+    <title>Cadastro de Perfil - DevMatch</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fa-solid fa-code-branch"></i> Dev<span>Match</span>
+            </a>
+            <nav id="main-navigation">
+                <a href="/" class="nav-link" id="nav-home">Início</a>
+                <a href="/mural" class="nav-link" id="nav-mural">Mural de Projetos</a>
+                <a href="/cadastro" class="nav-link active" id="nav-profile">Meu Perfil</a>
+                <a href="/novo-projeto" class="btn btn-primary" id="nav-new-project">Criar Projeto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="form-box">
+                <h2 id="form-title">Crie seu Perfil</h2>
+                <p class="subtitle" id="form-subtitle">Cadastre suas informações para começar a colaborar ou gerenciar seus projetos.</p>
+                
+                <form id="cadastro-form" novalidate>
+                    <div class="form-group">
+                        <label for="user-nome">Nome Completo</label>
+                        <input type="text" id="user-nome" name="nome" placeholder="Ex: João Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email">E-mail Acadêmico ou Pessoal</label>
+                        <input type="email" id="user-email" name="email" placeholder="Ex: joao@eniac.edu.br" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-nivel">Nível de Experiência</label>
+                        <select id="user-nivel" name="nivel" required>
+                            <option value="" disabled selected>Selecione seu nível</option>
+                            <option value="Iniciante">Iniciante (Começando a estudar)</option>
+                            <option value="Intermediário">Intermediário (Já constrói pequenos apps)</option>
+                            <option value="Avançado">Avançado (Experiência ou Projetos Complexos)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-bio">Sobre Você / Biografia</label>
+                        <textarea id="user-bio" name="bio" rows="4" placeholder="Fale um pouco sobre seus interesses, o que quer estudar e criar..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tecnologias de Interesse</label>
+                        <div class="tech-checkboxes" id="tech-container">
+                            <!-- Populated dynamically by JS -->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-linkedin">Link do LinkedIn</label>
+                        <input type="url" id="user-linkedin" name="linkedin" placeholder="Ex: https://linkedin.com/in/usuario">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-github">Link do GitHub</label>
+                        <input type="url" id="user-github" name="github" placeholder="Ex: https://github.com/usuario">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-discord">Usuário do Discord</label>
+                        <input type="text" id="user-discord" name="discord" placeholder="Ex: usuario#1234 ou usuario">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="btn-submit-cadastro">Salvar Perfil</button>
+                        <button type="button" class="btn btn-secondary" id="btn-logout" style="display: none;">Sair da Conta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="notification" role="alert" aria-live="assertive">
+        <i class="fa-solid fa-circle-check" id="toast-icon"></i>
+        <span id="toast-message">Perfil salvo com sucesso!</span>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 DevMatch. Desenvolvido pelos estudantes do Eniac:</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">
+                Gustavo de Souza Costa &bull; Alysson Oliveira Brito &bull; Pedro Henrique Nemet dos Santos
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

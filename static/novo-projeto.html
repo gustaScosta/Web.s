@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publique sua ideia de projeto no DevMatch para encontrar desenvolvedores parceiros.">
+    <title>Publicar Novo Projeto - DevMatch</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fa-solid fa-code-branch"></i> Dev<span>Match</span>
+            </a>
+            <nav id="main-navigation">
+                <a href="/" class="nav-link" id="nav-home">Início</a>
+                <a href="/mural" class="nav-link" id="nav-mural">Mural de Projetos</a>
+                <a href="/cadastro" class="nav-link" id="nav-profile">Meu Perfil</a>
+                <a href="/novo-projeto" class="btn btn-primary" id="nav-new-project">Criar Projeto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <!-- Alert if not registered -->
+            <div id="login-warning-box" class="form-box" style="display: none; text-align: center; border-color: var(--accent);">
+                <i class="fa-solid fa-circle-exclamation" style="font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
+                <h2>Perfil Necessário</h2>
+                <p class="subtitle" style="margin-bottom: 2rem;">Você precisa cadastrar seu perfil de desenvolvedor antes de publicar um projeto no mural.</p>
+                <a href="/cadastro" class="btn btn-primary">Cadastrar Perfil</a>
+            </div>
+
+            <!-- Form if registered -->
+            <div class="form-box" id="project-form-box">
+                <h2>Publicar Ideia de Projeto</h2>
+                <p class="subtitle">Descreva sua ideia e especifique as tecnologias que você quer utilizar.</p>
+                
+                <form id="projeto-form" novalidate>
+                    <div class="form-group">
+                        <label for="proj-titulo">Título do Projeto</label>
+                        <input type="text" id="proj-titulo" name="titulo" placeholder="Ex: App de Finanças Pessoais" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proj-descricao">Descrição do Projeto</label>
+                        <textarea id="proj-descricao" name="descricao" rows="6" placeholder="Descreva os objetivos do projeto, o que pretende desenvolver, como será a divisão de tarefas..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tecnologias Necessárias</label>
+                        <div class="tech-checkboxes" id="project-tech-container">
+                            <!-- Populated dynamically by JS -->
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="btn-submit-projeto">Publicar no Mural</button>
+                        <a href="/mural" class="btn btn-secondary" style="text-align: center;">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="notification" role="alert" aria-live="assertive">
+        <i class="fa-solid fa-circle-check" id="toast-icon"></i>
+        <span id="toast-message">Projeto publicado com sucesso!</span>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 DevMatch. Desenvolvido pelos estudantes do Eniac:</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">
+                Gustavo de Souza Costa &bull; Alysson Oliveira Brito &bull; Pedro Henrique Nemet dos Santos
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

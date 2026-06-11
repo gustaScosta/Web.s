@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veja o perfil do desenvolvedor e entre em contato para colaborar no DevMatch.">
+    <title>Perfil do Desenvolvedor - DevMatch</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fa-solid fa-code-branch"></i> Dev<span>Match</span>
+            </a>
+            <nav id="main-navigation">
+                <a href="/" class="nav-link" id="nav-home">Início</a>
+                <a href="/mural" class="nav-link" id="nav-mural">Mural de Projetos</a>
+                <a href="/cadastro" class="nav-link active" id="nav-profile">Meu Perfil</a>
+                <a href="/novo-projeto" class="btn btn-primary" id="nav-new-project">Criar Projeto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-section" id="profile-container" style="display: none;">
+            <!-- Left Sidebar: Basic Info & Socials -->
+            <aside class="profile-sidebar">
+                <div class="profile-avatar" id="prof-avatar">U</div>
+                <h2 id="prof-nome">Nome do Usuário</h2>
+                <span class="level-badge level-iniciante" id="prof-nivel">Iniciante</span>
+                
+                <div class="profile-socials">
+                    <a href="#" class="social-icon" id="prof-link-linkedin" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon" id="prof-link-github" target="_blank" title="GitHub" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon" id="prof-link-discord" target="_blank" title="Discord" aria-label="Discord">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Right Content: Bio, Techs and Projects -->
+            <div class="profile-content">
+                <!-- Bio Block -->
+                <article class="profile-block">
+                    <h3>Sobre Mim</h3>
+                    <p id="prof-bio">Esta é a biografia do desenvolvedor...</p>
+                </article>
+
+                <!-- Tech Block -->
+                <article class="profile-block">
+                    <h3>Tecnologias de Interesse</h3>
+                    <div class="tech-tags" id="prof-techs" style="margin-top: 1rem; margin-bottom: 0;">
+                        <!-- Tech badges populated dynamically -->
+                    </div>
+                </article>
+
+                <!-- Projects Block -->
+                <article class="profile-block">
+                    <h3>Projetos Publicados</h3>
+                    <div class="profile-projects-grid" id="prof-projects" style="margin-top: 1.5rem;">
+                        <!-- Project list populated dynamically -->
+                        <p class="no-projects" style="padding: 2rem;">Nenhum projeto publicado ainda.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Error/Not Found Box -->
+        <div class="form-container" id="profile-error-box" style="display: none; text-align: center;">
+            <div class="form-box">
+                <i class="fa-solid fa-circle-exclamation" style="font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
+                <h2>Perfil não Encontrado</h2>
+                <p class="subtitle" style="margin-bottom: 2rem;">O perfil solicitado não foi localizado no banco de dados.</p>
+                <a href="/mural" class="btn btn-primary">Voltar para o Mural</a>
+            </div>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="profile-loading" style="text-align: center; padding: 10rem 2rem;">
+            <i class="fa-solid fa-spinner fa-spin" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <p style="color: var(--text-muted);">Carregando perfil...</p>
+        </div>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="notification" role="alert" aria-live="assertive">
+        <i class="fa-solid fa-circle-check" id="toast-icon"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 DevMatch. Desenvolvido pelos estudantes do Eniac:</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">
+                Gustavo de Souza Costa &bull; Alysson Oliveira Brito &bull; Pedro Henrique Nemet dos Santos
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
